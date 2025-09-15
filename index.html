@@ -435,7 +435,10 @@
                         convertedInfo.textContent = `${getFileName()}.${selectedFormat} (${formatFileSize(blob.size)})`;
                         
                         // Show the converted image and arrow
-                        previewArea.classList.add('show-converted');
+                        const convertedBox = document.querySelector('.preview-box.converted');
+                        if (convertedBox) {
+                            convertedBox.style.display = 'block';
+                        }
                         conversionArrow.style.display = 'block';
                         
                         previewArea.scrollIntoView({ behavior: 'smooth' });
