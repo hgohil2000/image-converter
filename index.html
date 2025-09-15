@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Image Converter</title>
+<title>ExpressPix Image Converter</title>
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -12,7 +12,6 @@ body {
   padding: 0;
   color: #333;
 }
-
 .container {
   max-width: 1000px;
   margin: 40px auto;
@@ -21,15 +20,13 @@ body {
   padding: 30px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
-
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
-
 .header-icon {
   width: 80px;
   height: 80px;
@@ -37,80 +34,80 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .header-icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-
 h1 {
   margin: 0;
   color: #444;
-  font-size: 2.2em;
+  font-size: 2.5em;
   font-weight: 600;
 }
-
 .upload-section {
   border: 2px dashed #aaa;
   border-radius: 10px;
   padding: 30px;
   text-align: center;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   background: #fafafa;
   transition: background 0.3s;
 }
-
 .upload-section.dragover {
   background: #f0eaff;
   border-color: #7a42f4;
 }
-
-input[type="file"] {
-  display: none;
-}
-
+input[type="file"] { display: none; }
 .controls {
   margin-bottom: 20px;
   text-align: center;
 }
-
 .controls label {
   display: inline-block;
-  margin: 10px 0 5px;
+  margin: 10px 5px 5px 0;
   font-weight: bold;
 }
-
-.controls input, .controls select {
-  margin-right: 10px;
+.controls input[type="number"] {
   padding: 5px;
+  width: 80px;
+  margin-right: 10px;
 }
-
-.dimension-group, .quality-group {
+.dimension-group {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
   margin-bottom: 15px;
-  flex-wrap: wrap;
 }
-
 .dimension-group label.checkbox-label {
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-right: 0;
 }
-
+.quality-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+.quality-group input[type=range] {
+  flex: 1;
+  max-width: 250px;
+}
+.quality-status {
+  font-weight: bold;
+  min-width: 130px;
+}
 .convert-row {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
-
 .convert-row select {
   font-size: 1.1em;
   padding: 8px;
@@ -118,12 +115,6 @@ input[type="file"] {
   border-radius: 6px;
   font-weight: bold;
 }
-
-.quality-status {
-  font-weight: bold;
-  min-width: 130px;
-}
-
 button {
   background: #7a42f4;
   color: white;
@@ -135,23 +126,19 @@ button {
   margin: 10px;
   transition: background 0.3s;
 }
-
 button:disabled {
   background: #ccc;
   cursor: not-allowed;
 }
-
 button:hover:enabled {
   background: #6936d9;
 }
-
 .preview-container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   margin-top: 30px;
 }
-
 .preview-box {
   flex: 1;
   background: #fafafa;
@@ -165,7 +152,6 @@ button:hover:enabled {
   align-items: center;
   justify-content: flex-start;
 }
-
 .preview-box h2 {
   margin-top: 0;
   margin-bottom: 10px;
@@ -174,38 +160,32 @@ button:hover:enabled {
   justify-content: center;
   gap: 10px;
 }
-
 .preview-box img {
   max-width: 100%;
   max-height: 200px;
   object-fit: contain;
   border-radius: 4px;
 }
-
 .file-info {
   margin-top: 8px;
   font-size: 0.9em;
   color: #555;
 }
-
 .bin-btn {
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
 }
-
 .bin-btn svg {
   width: 20px;
   height: 20px;
   fill: #e63946;
   transition: transform 0.2s;
 }
-
 .bin-btn:hover svg {
   transform: scale(1.1);
 }
-
 .placeholder {
   color: #aaa;
   font-style: italic;
@@ -217,33 +197,45 @@ button:hover:enabled {
   padding: 20px;
   width: 90%;
 }
+footer {
+  text-align:center; 
+  margin-top:40px; 
+  font-size:0.9em; 
+  color:#555;
+}
+footer a {
+  color: #7a42f4;
+  text-decoration: none;
+  margin: 0 5px;
+}
+footer a:hover { text-decoration: underline; }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .header { flex-direction: column; gap: 10px; }
-  h1 { font-size: 1.8em; }
+  h1 { font-size: 2em; }
   .preview-container { flex-direction: column; align-items: center; }
   .preview-box { width: 90%; max-width: 350px; }
   .dimension-group, .quality-group, .convert-row { flex-direction: column; align-items: center; }
-  .convert-row select, .controls input { width: 100%; max-width: 200px; }
-  button { width: 80%; margin: 10px auto; }
-  .upload-section { padding: 20px; }
+  button { width: 80%; margin: 10px auto 0 auto; }
 }
 </style>
+
+<!-- Google AdSense Placeholder -->
+<script data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 </head>
 <body>
 <div class="container">
   <div class="header">
     <div class="header-icon">
-      <img src="image-converter-icon.png" alt="Image Converter Icon" />
+      <img src="image-converter-icon.png" alt="ExpressPix Image Converter Logo" />
     </div>
-    <h1>Image Converter</h1>
+    <h1>ExpressPix Image Converter</h1>
   </div>
 
   <div class="upload-section" id="uploadSection">
-    <p>Drag & Drop your image here or 
-      <label for="fileInput" style="color:#7a42f4; cursor:pointer;">Browse</label>
-    </p>
+    <p>Drag & Drop your image here or <label for="fileInput" style="color:#7a42f4; cursor:pointer;">Browse</label></p>
     <input type="file" id="fileInput" accept="image/*"/>
   </div>
 
@@ -278,8 +270,6 @@ button:hover:enabled {
     <div>
       <button id="convertBtn" disabled>Convert & Resize</button>
       <button id="downloadBtn" disabled>Download</button>
-      <div id="remainingDownloads" style="margin-top:5px; font-weight:bold;"></div>
-      <div id="attemptMessage" style="color:red; margin-top:3px;"></div>
     </div>
   </div>
 
@@ -302,6 +292,15 @@ button:hover:enabled {
       <div class="file-info" id="convertedInfo"></div>
     </div>
   </div>
+
+  <footer>
+    <p>
+      <a href="terms.html">Terms of Service</a> | 
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
+    <p>&copy; 2025 ExpressPix Image Converter. All rights reserved.</p>
+  </footer>
+
 </div>
 
 <script>
@@ -322,10 +321,18 @@ const formatSelect = document.getElementById("format");
 const convertBtn = document.getElementById("convertBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 const deleteBtn = document.getElementById("deleteBtn");
-const remainingDownloads = document.getElementById("remainingDownloads");
-const attemptMessage = document.getElementById("attemptMessage");
 
 let originalFile, aspectRatio, convertedBlob;
+
+// Download limit using sessionStorage
+function getDownloadData() {
+  const data = sessionStorage.getItem('downloadLimit');
+  return data ? JSON.parse(data) : {count:0, startTime:Date.now()};
+}
+
+function updateDownloadData(data) {
+  sessionStorage.setItem('downloadLimit', JSON.stringify(data));
+}
 
 function formatFileSize(bytes) {
   const sizes = ['Bytes', 'KB', 'MB'];
@@ -343,29 +350,8 @@ function updateQualityLabel() {
   else label = "Excellent";
   qualityStatus.textContent = `${label} (${Math.round(val*100)}%)`;
 }
-
 qualityInput.addEventListener("input", updateQualityLabel);
 updateQualityLabel();
-
-// --- Initialize download tracking ---
-function initializeDownloadTracking() {
-  const data = JSON.parse(localStorage.getItem('downloadData') || '{}');
-  const now = Date.now();
-  if (!data.startTime || now - data.startTime > 30*60*1000) {
-    localStorage.setItem('downloadData', JSON.stringify({ count: 0, startTime: now }));
-  }
-  updateDownloadStatus();
-}
-
-function updateDownloadStatus() {
-  const data = JSON.parse(localStorage.getItem('downloadData'));
-  const now = Date.now();
-  const remaining = 5 - data.count;
-  remainingDownloads.textContent = `Remaining downloads: ${remaining > 0 ? remaining : 0}`;
-  attemptMessage.textContent = remaining <= 0 ? "Download limit reached (5 per 30 minutes)" : "";
-}
-
-initializeDownloadTracking();
 
 function handleFile(file) {
   if (!file.type.startsWith("image/")) { alert("Please upload a valid image file."); return; }
@@ -393,7 +379,9 @@ function handleFile(file) {
   reader.readAsDataURL(file);
 }
 
-fileInput.addEventListener("change", e => { if (e.target.files.length) handleFile(e.target.files[0]); });
+fileInput.addEventListener("change", e => {
+  if (e.target.files.length) handleFile(e.target.files[0]);
+});
 
 uploadSection.addEventListener("dragover", e => { e.preventDefault(); uploadSection.classList.add("dragover"); });
 uploadSection.addEventListener("dragleave", e => { e.preventDefault(); uploadSection.classList.remove("dragover"); });
@@ -417,24 +405,27 @@ convertBtn.addEventListener("click", () => {
       convertedPreview.style.display = "block";
       convertedPlaceholder.style.display = "none";
       convertedInfo.textContent = `${originalFile.name.split(".")[0]}.${formatSelect.value.split("/")[1]} (${formatFileSize(blob.size)})`;
-
-      const data = JSON.parse(localStorage.getItem('downloadData'));
-      const now = Date.now();
-      if(now - data.startTime > 30*60*1000) { data.count = 0; data.startTime = now; localStorage.setItem('downloadData', JSON.stringify(data)); }
-      if(data.count < 5) downloadBtn.disabled = false;
-      updateDownloadStatus();
+      downloadBtn.disabled = false;
     }, formatSelect.value, parseFloat(qualityInput.value));
   };
 });
 
 downloadBtn.addEventListener("click", () => {
-  if(!convertedBlob) return;
+  if (!convertedBlob) return;
 
-  const data = JSON.parse(localStorage.getItem('downloadData'));
+  // Limit 5 downloads per 30 minutes
+  const data = getDownloadData();
   const now = Date.now();
-  if (now - data.startTime > 30*60*1000) { data.count = 0; data.startTime = now; }
-
-  if (data.count >= 5) { updateDownloadStatus(); return; }
+  if (now - data.startTime > 30*60*1000) {
+    data.count = 0;
+    data.startTime = now;
+  }
+  if (data.count >= 5) {
+    alert("You have reached the 5 downloads limit for the last 30 minutes.");
+    return;
+  }
+  data.count++;
+  updateDownloadData(data);
 
   const a = document.createElement("a");
   a.href = URL.createObjectURL(convertedBlob);
@@ -442,16 +433,10 @@ downloadBtn.addEventListener("click", () => {
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-
-  data.count += 1;
-  localStorage.setItem('downloadData', JSON.stringify(data));
-  updateDownloadStatus();
-  if(data.count >= 5) downloadBtn.disabled = true;
 });
 
 deleteBtn.addEventListener("click", () => {
   originalFile = null;
-  convertedBlob = null;
   originalPreview.src = "";
   originalPreview.style.display = "none";
   originalPlaceholder.style.display = "block";
@@ -464,9 +449,8 @@ deleteBtn.addEventListener("click", () => {
   downloadBtn.disabled = true;
 });
 
-widthInput.addEventListener("input", () => { if(lockRatio.checked) heightInput.value = Math.round(parseInt(widthInput.value)/aspectRatio); });
-heightInput.addEventListener("input", () => { if(lockRatio.checked) widthInput.value = Math.round(parseInt(heightInput.value)*aspectRatio); });
-
+widthInput.addEventListener("input", () => { if (lockRatio.checked) heightInput.value = Math.round(parseInt(widthInput.value)/aspectRatio); });
+heightInput.addEventListener("input", () => { if (lockRatio.checked) widthInput.value = Math.round(parseInt(heightInput.value)*aspectRatio); });
 </script>
 </body>
 </html>
