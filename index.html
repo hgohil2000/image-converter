@@ -433,7 +433,11 @@
                         const url = URL.createObjectURL(blob);
                         convertedImage.src = url;
                         convertedInfo.textContent = `${getFileName()}.${selectedFormat} (${formatFileSize(blob.size)})`;
-                        previewArea.style.display = 'block';
+                        
+                        // Show the converted image and arrow
+                        previewArea.classList.add('show-converted');
+                        conversionArrow.style.display = 'block';
+                        
                         previewArea.scrollIntoView({ behavior: 'smooth' });
                     } else {
                         showError('Failed to convert image. Please try again.');
