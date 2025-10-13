@@ -6,26 +6,26 @@
 <title>Free Image Converter - Secure, Fast JPG, PNG & WebP Conversion in Your Browser | Image ConvertX</title>
 <style>
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #2c3e50;
 }
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 40px auto;
-  background: #fff;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
 /* Header styling */
 .header {
-  position: relative; /* allows absolute positioning of icon */
+  position: relative;
   margin-bottom: 30px;
-  height: 120px; /* suitable desktop height */
+  height: 120px;
 }
 
 .header-icon {
@@ -33,7 +33,7 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 150px;  /* resized for desktop */
+  width: 150px;
   height: 100px;
 }
 
@@ -46,25 +46,56 @@ body {
 .header h1 {
   text-align: center;
   margin: 0;
-  line-height: 120px; /* vertically center within header */
+  line-height: 120px;
   font-size: 2.5em;
-  font-weight: 600;
+  font-weight: 700;
+  color: #1e3a8a;
+  letter-spacing: -0.5px;
+}
+
+/* Introduction Section */
+.intro-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-left: 5px solid #3b82f6;
+  padding: 25px 30px;
+  margin-bottom: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+}
+
+.intro-section h2 {
+  margin-top: 0;
+  color: #1e40af;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.intro-section p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+  color: #334155;
 }
 
 /* Upload Section */
 .upload-section {
-  border: 2px dashed #aaa;
-  border-radius: 10px;
-  padding: 30px;
+  border: 3px dashed #93c5fd;
+  border-radius: 16px;
+  padding: 40px;
   text-align: center;
   cursor: pointer;
-  margin-bottom: 25px;
-  background: #fafafa;
-  transition: background 0.3s;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  transition: all 0.3s ease;
+}
+.upload-section:hover {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  transform: translateY(-2px);
 }
 .upload-section.dragover {
-  background: #f0eaff;
-  border-color: #7a42f4;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-color: #2563eb;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
 }
 input[type="file"] { display: none; }
 
@@ -79,9 +110,18 @@ input[type="file"] { display: none; }
   font-weight: bold;
 }
 .controls input[type="number"] {
-  padding: 5px;
-  width: 80px;
+  padding: 8px 12px;
+  width: 85px;
   margin-right: 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+.controls input[type="number"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 .dimension-group {
   display: flex;
@@ -105,6 +145,30 @@ input[type="file"] { display: none; }
 .quality-group input[type=range] {
   flex: 1;
   max-width: 250px;
+  height: 8px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  outline: none;
+  -webkit-appearance: none;
+}
+.quality-group input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+}
+.quality-group input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
 }
 .quality-status {
   font-weight: bold;
@@ -119,30 +183,43 @@ input[type="file"] { display: none; }
 }
 .convert-row select {
   font-size: 1.1em;
-  padding: 8px;
-  border: 2px solid #7a42f4;
-  border-radius: 6px;
-  font-weight: bold;
+  padding: 10px 16px;
+  border: 2px solid #3b82f6;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #1e40af;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.convert-row select:hover {
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
 /* Buttons */
 button {
-  background: #7a42f4;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: white;
   border: none;
-  padding: 12px 20px;
-  font-size: 1em;
-  border-radius: 6px;
+  padding: 14px 28px;
+  font-size: 1.05em;
+  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
   margin: 10px;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 button:disabled {
-  background: #ccc;
+  background: #cbd5e1;
   cursor: not-allowed;
+  box-shadow: none;
 }
 button:hover:enabled {
-  background: #6936d9;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
 }
 
 /* Preview */
@@ -151,27 +228,35 @@ button:hover:enabled {
   justify-content: space-between;
   gap: 20px;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 .preview-box {
   flex: 1;
-  background: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
   text-align: center;
   min-height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  transition: all 0.3s ease;
+}
+.preview-box:hover {
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
 }
 .preview-box h2 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  color: #1e40af;
+  font-weight: 700;
+  font-size: 1.3em;
 }
 .preview-box img {
   max-width: 100%;
@@ -211,6 +296,74 @@ button:hover:enabled {
   width: 90%;
 }
 
+/* Content Sections */
+.content-section {
+  margin: 45px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.content-section h2 {
+  color: #1e40af;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.content-section h3 {
+  color: #1e3a8a;
+  font-size: 1.4em;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.content-section p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #334155;
+}
+
+.content-section ul {
+  line-height: 1.8;
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.content-section li {
+  margin-bottom: 8px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.feature-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid #3b82f6;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.feature-card h3 {
+  color: #2563eb;
+  margin-top: 0;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
 /* Footer */
 footer {
   text-align:center; 
@@ -219,11 +372,16 @@ footer {
   color:#555;
 }
 footer a {
-  color: #7a42f4;
+  color: #2563eb;
   text-decoration: none;
   margin: 0 5px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
-footer a:hover { text-decoration: underline; }
+footer a:hover { 
+  text-decoration: underline;
+  color: #1d4ed8;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -248,17 +406,12 @@ footer a:hover { text-decoration: underline; }
   .preview-box { width: 90%; max-width: 350px; }
   .dimension-group, .quality-group, .convert-row { flex-direction: column; align-items: center; }
   button { width: 80%; margin: 10px auto 0 auto; }
+  .features-grid { grid-template-columns: 1fr; }
 }
 </style>
 
-<!-- Google AdSense Placeholder -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6785975015899155"
      crossorigin="anonymous"></script>
-
-<!--  
-<script data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
--->
   
 </head>
 <body>
@@ -271,9 +424,16 @@ footer a:hover { text-decoration: underline; }
     <h1>Image Converter & Resizer</h1>
   </div>
 
+  <!-- Introduction Section -->
+  <div class="intro-section">
+    <h2>Free Online Image Converter - Convert Images Instantly in Your Browser</h2>
+    <p>Welcome to Image ConvertX, your trusted free online image converter and resizer. Convert images between multiple formats including JPEG, PNG, WebP, BMP, GIF, and TIFF without uploading your files to any server. Our browser-based tool ensures complete privacy and security while delivering fast, high-quality image conversions.</p>
+    <p>Whether you need to convert a PNG to JPEG, resize images for web optimization, or transform photos into modern WebP format, our tool handles it all instantly. No registration required, no file size limits up to 10MB, and completely free to use.</p>
+  </div>
+
   <!-- Upload Section -->
   <div class="upload-section" id="uploadSection">
-    <p>Drag & Drop your image here or <label for="fileInput" style="color:#7a42f4; cursor:pointer;">Browse</label></p>
+    <p>Drag & Drop your image here or <label for="fileInput" style="color:#3b82f6; cursor:pointer; font-weight:600;">Browse</label></p>
     <input type="file" id="fileInput" accept="image/*"/>
   </div>
 
@@ -333,6 +493,141 @@ footer a:hover { text-decoration: underline; }
     </div>
   </div>
 
+  <!-- Features Section -->
+  <div class="content-section">
+    <h2>Why Choose Image ConvertX?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>🔒 100% Privacy & Security</h3>
+        <p>All conversions happen directly in your browser. Your images never leave your device, ensuring complete privacy and data security.</p>
+      </div>
+      <div class="feature-card">
+        <h3>⚡ Lightning Fast</h3>
+        <p>Instant image conversion with no server delays. Convert and resize images in seconds without waiting for uploads or downloads.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🆓 Completely Free</h3>
+        <p>No hidden costs, no subscriptions, no watermarks. Use our image converter as many times as you need, absolutely free.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 Works Everywhere</h3>
+        <p>Fully responsive design works on desktop, tablet, and mobile devices. Convert images on the go from any device.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to Use Section -->
+  <div class="content-section">
+    <h2>How to Convert and Resize Images</h2>
+    <p>Converting your images with Image ConvertX is simple and intuitive. Follow these easy steps to transform your images:</p>
+    
+    <h3>Step 1: Upload Your Image</h3>
+    <p>Click the upload area or drag and drop your image file. We support all common image formats including JPEG, PNG, WebP, BMP, GIF, TIFF, and HEIC. Maximum file size is 10MB.</p>
+    
+    <h3>Step 2: Choose Your Output Format</h3>
+    <p>Select your desired output format from the dropdown menu. Choose from JPEG for photographs, PNG for graphics with transparency, WebP for modern web optimization, or other formats based on your needs.</p>
+    
+    <h3>Step 3: Adjust Dimensions (Optional)</h3>
+    <p>Enter custom width and height values to resize your image. The aspect ratio lock ensures your image maintains its proportions, or uncheck it for custom dimensions.</p>
+    
+    <h3>Step 4: Set Quality Level</h3>
+    <p>Use the quality slider to balance file size and image quality. Higher quality produces larger files with better visual fidelity, while lower quality creates smaller files.</p>
+    
+    <h3>Step 5: Convert and Download</h3>
+    <p>Click the "Convert & Resize" button to process your image. Preview the result, then click "Download" to save your converted image to your device.</p>
+  </div>
+
+  <!-- Image Format Guide -->
+  <div class="content-section">
+    <h2>Understanding Image Formats</h2>
+    <p>Choosing the right image format is crucial for optimal file size, quality, and compatibility. Here's a comprehensive guide to help you make the best choice:</p>
+    
+    <h3>JPEG (JPG)</h3>
+    <p>JPEG is the most widely used format for photographs and images with complex colors. It uses lossy compression to significantly reduce file sizes while maintaining acceptable quality. Best for photographs, digital art, and images without transparency. JPEG does not support transparent backgrounds.</p>
+    
+    <h3>PNG</h3>
+    <p>PNG offers lossless compression and supports transparency, making it ideal for graphics, logos, and images requiring crisp edges. While PNG files are typically larger than JPEG, they preserve perfect quality without compression artifacts. Perfect for screenshots, graphics with text, and images requiring transparent backgrounds.</p>
+    
+    <h3>WebP</h3>
+    <p>WebP is a modern format developed by Google that provides superior compression for both lossy and lossless images. It typically produces smaller file sizes than JPEG or PNG while maintaining comparable quality. Ideal for web optimization, reducing page load times, and modern web applications. Note that older browsers may have limited WebP support.</p>
+    
+    <h3>BMP</h3>
+    <p>BMP is an uncompressed bitmap format that preserves every pixel without any quality loss. However, this results in very large file sizes. Use BMP when you need pixel-perfect accuracy for editing or when working with software that requires uncompressed formats.</p>
+    
+    <h3>GIF</h3>
+    <p>GIF supports simple animations and uses lossless compression with a limited 256-color palette. While outdated for static images, GIF remains popular for simple animations and memes. For static images, PNG or WebP are better alternatives.</p>
+    
+    <h3>TIFF</h3>
+    <p>TIFF is a flexible format commonly used in professional photography and printing. It supports both lossy and lossless compression and can store multiple images and metadata. Best for archival purposes, professional printing, and situations requiring maximum image quality.</p>
+  </div>
+
+  <!-- Tips and Best Practices -->
+  <div class="content-section">
+    <h2>Image Optimization Tips</h2>
+    <p>Get the most out of your image conversions with these expert tips and best practices:</p>
+    
+    <ul>
+      <li><strong>Choose the Right Format:</strong> Use JPEG for photos, PNG for graphics with transparency, and WebP for optimal web performance.</li>
+      <li><strong>Balance Quality and File Size:</strong> Higher quality settings produce better images but larger files. For web use, 70-80% quality often provides the best balance.</li>
+      <li><strong>Resize Before Converting:</strong> Reducing image dimensions significantly decreases file size. Never use images larger than needed for their display purpose.</li>
+      <li><strong>Maintain Aspect Ratio:</strong> Keep the aspect ratio locked when resizing to avoid distortion and stretched images.</li>
+      <li><strong>Web Optimization:</strong> For website images, aim for file sizes under 200KB. Consider WebP format for modern browsers to achieve smaller sizes.</li>
+      <li><strong>Batch Processing:</strong> If you need to convert multiple images, bookmark this page for quick access and consistent settings.</li>
+      <li><strong>Preview Before Downloading:</strong> Always check the converted image preview to ensure quality meets your expectations.</li>
+      <li><strong>Save Original Files:</strong> Keep backups of original images before conversion, especially when using lossy compression formats.</li>
+    </ul>
+  </div>
+
+  <!-- Common Use Cases -->
+  <div class="content-section">
+    <h2>Common Use Cases</h2>
+    <p>Image ConvertX serves various needs across different industries and applications:</p>
+    
+    <h3>Web Developers and Designers</h3>
+    <p>Optimize images for faster page loading, convert to modern formats like WebP, and resize graphics to exact specifications for responsive designs.</p>
+    
+    <h3>Photographers and Content Creators</h3>
+    <p>Prepare images for different platforms, reduce file sizes for easier sharing, and convert between formats for client deliverables or printing requirements.</p>
+    
+    <h3>Social Media Managers</h3>
+    <p>Resize images to meet platform-specific dimensions, optimize file sizes for faster uploads, and convert formats for maximum compatibility across different social networks.</p>
+    
+    <h3>E-commerce Businesses</h3>
+    <p>Standardize product images, optimize for fast page loads to improve conversion rates, and ensure images meet marketplace requirements.</p>
+    
+    <h3>Bloggers and Publishers</h3>
+    <p>Reduce image file sizes to improve site speed and SEO, convert images to web-friendly formats, and maintain consistent image dimensions throughout content.</p>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="content-section">
+    <h2>Frequently Asked Questions</h2>
+    
+    <h3>Is my data safe when using Image ConvertX?</h3>
+    <p>Absolutely. All image processing happens entirely in your browser using JavaScript. Your images are never uploaded to our servers or any third-party services. Once you close your browser, all data is cleared. This client-side processing ensures complete privacy and security.</p>
+    
+    <h3>What is the maximum file size I can convert?</h3>
+    <p>Our converter supports images up to 10MB in size. This limit ensures smooth performance across all devices while accommodating most common use cases. For larger files, consider resizing them first using photo editing software.</p>
+    
+    <h3>Which image formats are supported?</h3>
+    <p>We support all major image formats including JPEG, PNG, WebP, BMP, GIF, TIFF, and HEIC. You can convert between any of these formats seamlessly.</p>
+    
+    <h3>Does converting to JPEG lose quality?</h3>
+    <p>JPEG uses lossy compression, which means some quality is sacrificed to reduce file size. However, at quality settings of 70-80% or higher, the difference is often imperceptible to the human eye. Use PNG if you need lossless compression.</p>
+    
+    <h3>Can I convert multiple images at once?</h3>
+    <p>Currently, our tool processes one image at a time to ensure optimal performance and user experience. Simply convert your first image, download it, and upload the next one.</p>
+    
+    <h3>Why should I use WebP format?</h3>
+    <p>WebP provides superior compression compared to JPEG and PNG, resulting in smaller file sizes without compromising quality. This leads to faster website loading times and reduced bandwidth usage. However, ensure your target audience uses modern browsers that support WebP.</p>
+    
+    <h3>Will resizing my image make it blurry?</h3>
+    <p>When enlarging images, some quality loss may occur. When reducing size, images generally maintain sharpness. For best results, always work from the highest resolution source image available and only resize to smaller dimensions.</p>
+    
+    <h3>Is there a limit on how many images I can convert?</h3>
+    <p>You can convert as many images as you need. We have a download limit of 25 files per 30-minute session to prevent abuse, but this should be sufficient for normal usage.</p>
+  </div>
+
   <!-- Footer -->
   <footer>
     <p>
@@ -344,7 +639,6 @@ footer a:hover { text-decoration: underline; }
 
 </div>
 
-<!-- Scripts -->
 <script>
 const fileInput = document.getElementById("fileInput");
 const uploadSection = document.getElementById("uploadSection");
@@ -366,7 +660,6 @@ const deleteBtn = document.getElementById("deleteBtn");
 
 let originalFile, aspectRatio, convertedBlob;
 
-// Download limit using sessionStorage
 function getDownloadData() {
   const data = sessionStorage.getItem('downloadLimit');
   return data ? JSON.parse(data) : {count:0, startTime:Date.now()};

@@ -3,13 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - Image Converter</title>
+  <title>Privacy Policy - Image ConvertX</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; color: #333; line-height: 1.6; background: #f9f9f9; }
-    h1, h2 { color: #444; }
-    a { color: #7a42f4; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      color: #2c3e50;
+      line-height: 1.8;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    
+    h1 { 
+      color: #1e40af;
+      font-size: 2.5em;
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    h2 { 
+      color: #1e3a8a;
+      font-size: 1.5em;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #3b82f6;
+    }
+    
+    a { 
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover { 
+      text-decoration: underline;
+      color: #1d4ed8;
+    }
+    
+    .container { 
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      padding: 45px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .header-section {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left: 5px solid #3b82f6;
+      padding: 25px 30px;
+      margin-bottom: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+    }
+    
+    .header-section p {
+      margin: 0;
+      font-size: 1.1em;
+      color: #334155;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      color: #334155;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white !important;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      text-decoration: none;
+      color: white !important;
+    }
+    
+    .contact-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 35px;
+      text-align: center;
+    }
+    
+    .contact-box a {
+      font-size: 1.15em;
+      font-weight: 600;
+    }
+    
+    .last-updated {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9em;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #e2e8f0;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      .container {
+        padding: 25px 20px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.3em;
+      }
+    }
   </style>
 
 <!-- Google AdSense Placeholder -->
@@ -19,29 +141,65 @@
 </head>
 <body>
   <div class="container">
+    <a href="index.html" class="back-link">← Back to Converter</a>
+    
     <h1>Privacy Policy</h1>
-    <p>Your privacy is important to us. This Privacy Policy explains how we handle information when you use our Image Converter and Resizer website.</p>
+    
+    <div class="header-section">
+      <p>Your privacy is important to us. This Privacy Policy explains how we handle information when you use our Image ConvertX website. We are committed to protecting your data and ensuring complete transparency about our practices.</p>
+    </div>
     
     <h2>1. Information We Collect</h2>
-    <p>We do not collect any personal information from users. Images you upload are processed locally in your browser and are not sent to any server.</p>
+    <p>We do not collect, store, or transmit any personal information from users. All images you upload are processed entirely locally in your web browser using JavaScript. No image files, metadata, or personal data are ever sent to our servers or any third-party services.</p>
+    <p>Our commitment to privacy means that your images never leave your device during the conversion process. This client-side processing ensures complete confidentiality and security of your files.</p>
 
-    <h2>2. Cookies and Tracking</h2>
-    <p>Our website may use cookies or browser storage to track download limits or preferences. These are stored locally in your browser and are not shared with third parties.</p>
+    <h2>2. Cookies and Browser Storage</h2>
+    <p>Our website uses minimal browser storage (sessionStorage) solely to track download limits and prevent abuse of the service. This data includes:</p>
+    <p>• Download count within a 30-minute session<br>
+    • Session start timestamp</p>
+    <p>This information is stored locally in your browser and is automatically cleared when you close your browser tab. We do not use this data for tracking, analytics, or any purpose beyond preventing service abuse.</p>
 
     <h2>3. Third-Party Services</h2>
-    <p>We use Google AdSense to display ads. Google may use cookies to show relevant ads. For more information on Google’s privacy practices, please visit <a href="https://policies.google.com/technologies/ads" target="_blank">Google Ads Privacy</a>.</p>
+    <p>We use Google AdSense to display advertisements on our website. Google may use cookies and similar technologies to show relevant ads based on your browsing activity across the web. These cookies are managed by Google and subject to their privacy policies.</p>
+    <p>For detailed information on how Google handles your data and how to manage your ad preferences, please visit:</p>
+    <p>• <a href="https://policies.google.com/technologies/ads" target="_blank">Google Ads Privacy & Terms</a><br>
+    • <a href="https://www.google.com/settings/ads" target="_blank">Google Ad Settings</a></p>
+    <p>We do not share any user data with Google AdSense or any other third parties, as we do not collect user data in the first place.</p>
 
-    <h2>4. Security</h2>
-    <p>We take reasonable measures to protect your data, but as images are processed locally in your browser, no image files leave your device.</p>
+    <h2>4. Security and Data Protection</h2>
+    <p>Security is a fundamental aspect of our service design. Because all image processing occurs locally in your browser, your files never traverse the internet and cannot be intercepted or accessed by anyone else.</p>
+    <p>We implement industry-standard security measures to protect our website infrastructure, including:</p>
+    <p>• Secure HTTPS encryption for all web traffic<br>
+    • Regular security updates and monitoring<br>
+    • No server-side file storage or processing</p>
+    <p>However, we recommend that you maintain up-to-date browser software and antivirus protection on your device for optimal security.</p>
 
-    <h2>5. Children’s Privacy</h2>
-    <p>Our website is not intended for children under 13. We do not knowingly collect data from children.</p>
+    <h2>5. Children's Privacy</h2>
+    <p>Our website is intended for general audiences and is not specifically designed for or targeted at children under the age of 13. We do not knowingly collect any personal information from children. Since we do not collect any user data, children can use our service safely under parental supervision.</p>
+    <p>If you are a parent or guardian and believe that your child has used our service, please note that no personal information would have been collected or stored.</p>
 
-    <h2>6. Changes to Privacy Policy</h2>
-    <p>We may update this Privacy Policy at any time. Continued use of the website constitutes acceptance of any changes.</p>
+    <h2>6. Your Rights and Choices</h2>
+    <p>Because we do not collect or store personal information, there is no user data for you to access, modify, or delete. You maintain complete control over your images at all times since they never leave your device.</p>
+    <p>You can clear browser storage at any time through your browser settings, which will reset any download limit counters stored locally.</p>
 
-    <h2>7. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:imageconvertx@gmail.com">imageconvertx@gmail.com</a>.</p>
+    <h2>7. International Users</h2>
+    <p>Our website is accessible globally. Since all processing occurs locally in your browser and we do not collect personal data, international data transfer regulations do not apply to our core service. However, Google AdSense may operate under different regulations depending on your location.</p>
+
+    <h2>8. Changes to This Privacy Policy</h2>
+    <p>We reserve the right to update this Privacy Policy at any time to reflect changes in our practices, technology, legal requirements, or other factors. Any changes will be posted on this page with an updated "Last Updated" date.</p>
+    <p>We encourage you to review this Privacy Policy periodically. Your continued use of the website after any modifications constitutes acceptance of the updated Privacy Policy.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>If you have any questions, concerns, or feedback about this Privacy Policy or our privacy practices, please don't hesitate to contact us:</p>
+    
+    <div class="contact-box">
+      <p><strong>Email:</strong> <a href="mailto:imageconvertx@gmail.com">imageconvertx@gmail.com</a></p>
+    </div>
+    
+    <div class="last-updated">
+      <p><strong>Last Updated:</strong> October 13, 2025</p>
+      <p>&copy; 2025 Image ConvertX. All rights reserved.</p>
+    </div>
   </div>
 </body>
 </html>
