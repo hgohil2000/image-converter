@@ -3,13 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service - Image Converter</title>
+  <title>Terms of Service - Image ConvertX</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; color: #333; line-height: 1.6; background: #f9f9f9; }
-    h1, h2 { color: #444; }
-    a { color: #7a42f4; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      color: #2c3e50;
+      line-height: 1.8;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    
+    h1 { 
+      color: #1e40af;
+      font-size: 2.5em;
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    h2 { 
+      color: #1e3a8a;
+      font-size: 1.5em;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #3b82f6;
+    }
+    
+    a { 
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover { 
+      text-decoration: underline;
+      color: #1d4ed8;
+    }
+    
+    .container { 
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      padding: 45px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .header-section {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left: 5px solid #3b82f6;
+      padding: 25px 30px;
+      margin-bottom: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+    }
+    
+    .header-section p {
+      margin: 0;
+      font-size: 1.1em;
+      color: #334155;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      color: #334155;
+    }
+    
+    ul {
+      margin: 15px 0;
+      padding-left: 25px;
+      color: #334155;
+    }
+    
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white !important;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      text-decoration: none;
+      color: white !important;
+    }
+    
+    .contact-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 35px;
+      text-align: center;
+    }
+    
+    .contact-box a {
+      font-size: 1.15em;
+      font-weight: 600;
+    }
+    
+    .important-note {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border-left: 5px solid #f59e0b;
+      padding: 20px 25px;
+      margin: 25px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.1);
+    }
+    
+    .important-note p {
+      margin: 0;
+      color: #78350f;
+      font-weight: 500;
+    }
+    
+    .last-updated {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9em;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #e2e8f0;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      .container {
+        padding: 25px 20px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.3em;
+      }
+    }
   </style>
 
   <!-- Google AdSense Placeholder -->
@@ -18,38 +166,137 @@
 </head>
 <body>
   <div class="container">
+    <a href="index.html" class="back-link">← Back to Converter</a>
+    
     <h1>Terms of Service</h1>
-    <p>Welcome to our Image Converter and Resizer web application. By using this website, you agree to the following terms and conditions:</p>
+    
+    <div class="header-section">
+      <p>Welcome to Image ConvertX. By accessing and using our Image Converter and Resizer web application, you agree to be bound by these Terms of Service. Please read them carefully before using our service.</p>
+    </div>
     
     <h2>1. Description of Service</h2>
-    <p>This website provides a tool to convert and resize images. You can upload image files and download converted/resized versions.</p>
-
-    <h2>2. User Responsibilities</h2>
+    <p>Image ConvertX provides a free, browser-based tool that allows users to convert images between multiple formats (including JPEG, PNG, WebP, BMP, GIF, TIFF, and HEIC) and resize images to custom dimensions. All image processing occurs locally in your web browser, ensuring complete privacy and security.</p>
+    <p>Our service includes features such as:</p>
     <ul>
-      <li>You must only upload images that you have the legal right to use.</li>
-      <li>You must not upload illegal, offensive, or copyrighted content without permission.</li>
-      <li>You agree not to misuse the website or attempt to disrupt its operation.</li>
+      <li>Format conversion between all major image types</li>
+      <li>Image resizing with aspect ratio locking</li>
+      <li>Quality adjustment controls</li>
+      <li>Client-side processing for maximum privacy</li>
+      <li>Instant preview of converted images</li>
     </ul>
 
-    <h2>3. Limitation of Liability</h2>
-    <p>This website is provided "as is". We are not responsible for any damages, data loss, or other issues resulting from the use of this service. Use at your own risk.</p>
+    <h2>2. User Responsibilities</h2>
+    <p>By using our service, you agree to the following responsibilities:</p>
+    <ul>
+      <li><strong>Legal Rights:</strong> You must only upload images that you have the legal right to use, modify, or distribute. This includes images you own, have created, or have obtained proper permission to use.</li>
+      <li><strong>Content Restrictions:</strong> You must not upload illegal, offensive, copyrighted, or inappropriate content without proper authorization. This includes but is not limited to: violent imagery, explicit content, copyrighted materials, or any content that violates applicable laws.</li>
+      <li><strong>Service Integrity:</strong> You agree not to misuse the website, attempt to disrupt its operation, or engage in any activity that could damage, disable, or impair the service.</li>
+      <li><strong>Abuse Prevention:</strong> You must not attempt to bypass download limits, automated protections, or other security measures implemented on the website.</li>
+      <li><strong>Respectful Use:</strong> You agree to use the service in a manner that respects other users and does not interfere with their ability to use the website.</li>
+    </ul>
 
-    <h2>4. Intellectual Property</h2>
-    <p>All content, design, and code on this website are the property of the site owner and are protected by copyright laws. Users may not reproduce or distribute the code without permission.</p>
+    <h2>3. Acceptable Use Policy</h2>
+    <p>You may not use our service to:</p>
+    <ul>
+      <li>Process images containing malware, viruses, or malicious code</li>
+      <li>Engage in any form of automated bulk processing that could overload our infrastructure</li>
+      <li>Attempt to reverse engineer, decompile, or extract source code from our website</li>
+      <li>Use the service for any unlawful purpose or in violation of any local, state, national, or international law</li>
+      <li>Infringe upon the intellectual property rights of others</li>
+    </ul>
 
-    <h2>5. Privacy</h2>
-    <p>Your use of the service is subject to our <a href="privacy.html">Privacy Policy</a>. We do not store or share your uploaded images beyond the conversion process.</p>
+    <div class="important-note">
+      <p><strong>⚠️ Important:</strong> We reserve the right to immediately terminate access for users who violate these terms or engage in activities that could harm our service or other users.</p>
+    </div>
 
-    <h2>6. Termination</h2>
-    <p>We reserve the right to suspend or terminate access to the website for users who violate these terms.</p>
+    <h2>4. Limitation of Liability</h2>
+    <p>This website and service are provided on an "as is" and "as available" basis without any warranties of any kind, either express or implied. We make no guarantees regarding:</p>
+    <ul>
+      <li>The accuracy, reliability, or completeness of the service</li>
+      <li>Uninterrupted or error-free operation</li>
+      <li>The quality of converted images meeting your specific requirements</li>
+      <li>Compatibility with all browsers or devices</li>
+    </ul>
+    <p>We are not responsible or liable for:</p>
+    <ul>
+      <li>Any damages, data loss, or corruption resulting from the use of this service</li>
+      <li>Quality degradation in converted images</li>
+      <li>Browser compatibility issues or performance problems</li>
+      <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+      <li>Loss of profits, data, or business opportunities</li>
+    </ul>
+    <p>You use this service entirely at your own risk. We strongly recommend maintaining backups of your original images before conversion.</p>
 
-    <h2>7. Changes to Terms</h2>
-    <p>We may update these Terms of Service at any time. Continued use of the site constitutes acceptance of the updated terms.</p>
+    <h2>5. Intellectual Property</h2>
+    <p>All content, design elements, code, graphics, logos, and other materials on this website are the exclusive property of Image ConvertX and are protected by copyright, trademark, and other intellectual property laws.</p>
+    <p><strong>You may not:</strong></p>
+    <ul>
+      <li>Reproduce, distribute, or create derivative works from our website code or design</li>
+      <li>Use our branding, logos, or trademarks without express written permission</li>
+      <li>Copy or replicate the functionality of our service for commercial purposes</li>
+      <li>Frame or mirror any part of the website without authorization</li>
+    </ul>
+    <p><strong>User Content:</strong> You retain all ownership rights to images you upload and process. We do not claim any rights to your images, and they remain your property at all times.</p>
 
-    <h2>8. Governing Law</h2>
-    <p>These terms are governed by the laws of the United Kingdom.</p>
+    <h2>6. Privacy and Data Protection</h2>
+    <p>Your use of the service is subject to our <a href="privacy.html">Privacy Policy</a>. Key points include:</p>
+    <ul>
+      <li>We do not store, transmit, or have access to your uploaded images</li>
+      <li>All image processing occurs locally in your browser</li>
+      <li>We do not collect personal information during the conversion process</li>
+      <li>Minimal browser storage is used only to prevent abuse</li>
+    </ul>
+    <p>Please review our complete Privacy Policy for detailed information about data handling practices.</p>
 
-    <p>If you have any questions about these terms, please contact us at <a href="mailto:imageconvertx@gmail.com">imageconvertx@gmail.com</a>.</p>
+    <h2>7. Download Limits</h2>
+    <p>To prevent abuse and ensure fair access for all users, we implement a download limit of 25 conversions per 30-minute session. This limit is tracked locally in your browser and resets automatically after 30 minutes. These limits may be adjusted at our discretion to maintain service quality.</p>
+
+    <h2>8. Third-Party Services</h2>
+    <p>Our website may display advertisements through Google AdSense. These third-party services operate under their own terms of service and privacy policies. We are not responsible for the content, policies, or practices of third-party advertisers.</p>
+
+    <h2>9. Termination</h2>
+    <p>We reserve the right to suspend, restrict, or terminate access to the website for any user who:</p>
+    <ul>
+      <li>Violates these Terms of Service</li>
+      <li>Engages in abusive or harmful behavior</li>
+      <li>Attempts to compromise the security or integrity of the service</li>
+      <li>Uses the service in a manner that could harm other users or our infrastructure</li>
+    </ul>
+    <p>Termination may occur immediately and without prior notice at our sole discretion.</p>
+
+    <h2>10. Changes to Terms</h2>
+    <p>We reserve the right to modify, update, or revise these Terms of Service at any time without prior notice. Changes will be effective immediately upon posting to this page. Material changes will be indicated by updating the "Last Updated" date at the bottom of this page.</p>
+    <p>Your continued use of the website after any modifications constitutes your acceptance of the updated terms. We encourage you to review these terms periodically to stay informed of any changes.</p>
+
+    <h2>11. Disclaimer of Warranties</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE SECURE, ERROR-FREE, OR VIRUS-FREE.</p>
+
+    <h2>12. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless Image ConvertX, its owners, operators, employees, and affiliates from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:</p>
+    <ul>
+      <li>Your use or misuse of the service</li>
+      <li>Your violation of these Terms of Service</li>
+      <li>Your violation of any rights of another party</li>
+      <li>Any content you upload or process through the service</li>
+    </ul>
+
+    <h2>13. Governing Law and Jurisdiction</h2>
+    <p>These Terms of Service are governed by and construed in accordance with the laws of the United Kingdom. Any disputes arising from or relating to these terms or your use of the service shall be subject to the exclusive jurisdiction of the courts of the United Kingdom.</p>
+
+    <h2>14. Severability</h2>
+    <p>If any provision of these Terms of Service is found to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable.</p>
+
+    <h2>15. Contact Information</h2>
+    <p>If you have any questions, concerns, or feedback about these Terms of Service, please contact us:</p>
+    
+    <div class="contact-box">
+      <p><strong>Email:</strong> <a href="mailto:imageconvertx@gmail.com">imageconvertx@gmail.com</a></p>
+    </div>
+    
+    <div class="last-updated">
+      <p><strong>Last Updated:</strong> October 13, 2025</p>
+      <p>&copy; 2025 Image ConvertX. All rights reserved.</p>
+    </div>
   </div>
 </body>
 </html>
